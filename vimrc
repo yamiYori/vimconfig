@@ -26,6 +26,12 @@ set history=1000
 set incsearch
 set hlsearch
 set smartcase
+
+set backspace=indent,eol,start
+
+" For some windows machine, it may solve a problem that vim could startup with replace mode when use wsl terminal
+set t_u7=
+
 " }}}
 
 " VIMSCRIPT ----------------- {{{
