@@ -2,25 +2,25 @@
 
 SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)
 
-if [ -d "~/.vim" ]; then
-    echo "Directory ~/.vim exists."
+if [ -d "${HOME}/.vim" ]; then
+    echo "Directory ${HOME}/.vim exists."
     echo "Creating backup"
-    mv ~/.vim ~/.vim.bak.$(date "+%Y%m%d%H%M%S")
+    mv ${HOME}/.vim ${HOME}/.vim.bak.$(date "+%Y%m%d%H%M%S")
 fi
 
-if [ -f "~/.vimrc" ]; then
-    echo "File ~/.vimrc exists."
+if [ -f "${HOME}/.vimrc" ]; then
+    echo "File ${HOME}/.vimrc exists."
     echo "Creating backup"
-    mv ~/.vimrc ~/.vimrc.bak.$(date "+%Y%m%d%H%M%S")
+    mv ${HOME}/.vimrc ${HOME}/.vimrc.bak.$(date "+%Y%m%d%H%M%S")
 fi
 
-mkdir ~/.vim
-mkdir ~/.vim/autoload
-mkdir ~/.vim/backup
-mkdir ~/.vim/colors
-mkdir ~/.vim/plugged
+mkdir ${HOME}/.vim
+mkdir ${HOME}/.vim/autoload
+mkdir ${HOME}/.vim/backup
+mkdir ${HOME}/.vim/colors
+mkdir ${HOME}/.vim/plugged
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 cp $SHELL_FOLDER/vimrc ~/.vimrc
 
